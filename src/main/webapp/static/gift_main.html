@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		var navItems = $('.admin-menu li > a');
+		var navListItems = $('.admin-menu li');
+		var allWells = $('.admin-content');
+		var allWellsExceptFirst = $('.admin-content:not(:first)');
+
+		allWellsExceptFirst.hide();
+		navItems.click(function(e) {
+			e.preventDefault();
+			navListItems.removeClass('active');
+			$(this).closest('li').addClass('active');
+
+			allWells.hide();
+			var target = $(this).attr('data-target-id');
+			$('#' + target).show();
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$('#Carousel').carousel({
+			interval : 5000
+		})
+	});
+</script>
+<style>
+body {
+	margin-top: 20px;
+}
+
+.fa-fw {
+	width: 2em;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<ul class="nav nav-pills nav-stacked admin-menu">
+					<li class="active"><a href="#" data-target-id="home"><i
+							class="fa fa-home fa-fw"></i>선물내역</a></li>
+					<li><a href="http://www.jquery2dotnet.com"
+						data-target-id="widgets" id="friendlist"><i
+							class="fa fa-list-alt fa-fw"></i>친구 위시리스트</a></li>
+					<li><a href="http://www.jquery2dotnet.com"
+						data-target-id="pages" id="pull"><i class="fa fa-file-o fa-fw"></i>선물함
+							채우기</a></li>
+				</ul>
+			</div>
+			<div class="col-md-9 well admin-content" id="home">
+				<p align="center">
+					<button type="button" class="btn btn-default btn-lg" id="gift_received">받은
+						선물함</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<button type="button" class="btn btn-default btn-lg" id="mywishlist">위시리스트</button>
+				</p>
+				<br /> <br />
+				<div
+					style="width: 200px; height: 150px; border: 1px; float: left; margin-right: 10px;">
+					<img src="http://placehold.it/150x120" id="image" width=150 /> <input
+						type="file" name="image" accept="image/*"
+						style="visibility: hidden;">
+				</div>
+
+				<div
+					style="width: 200px; height: 150px; border: 1px; float: left; margin-right: 10px;">
+					<img src="http://placehold.it/150x120" id="image" width=150 /> <input
+						type="file" name="image" accept="image/*"
+						style="visibility: hidden;">
+				</div>
+
+				<div
+					style="width: 200px; height: 150px; border: 1px; float: left; margin-right: 10px;">
+					<img src="http://placehold.it/150x120" id="image" width=150 /> <input
+						type="file" name="image" accept="image/*"
+						style="visibility: hidden;">
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+	<!--.container-->
+
+	<!-- <p>
+                Hello! This is a forked snippet.<br>
+                It is for users, which use one-page layouts.
+            </p>
+            <p>
+                Here's the original one from BhaumikPatel: <a href="http://bootsnipp.com/snippets/featured/vertical-admin-menu" target="_BLANK">Vertical Admin Menu</a>
+                <br><br>
+                <strong>Thank you Bhaumik!</strong>
+            </p> -->
+	</div>
+	<div class="col-md-9 well admin-content" id=""></div>
+	<div class="col-md-9 well admin-content" id=""></div>
+	</div>
+	</div>
+	<script>
+	$('#gift_received').on('click', function(){
+		location.href="list";
+	});
+		$('#friendlist').on('click', function() {
+			location.href = "friends";
+		});
+		$('#pull').on('click', function() {
+			location.href = "store";
+		});
+		$('#mywishlist').on('click', function() {
+			location.href = "mywishlist";
+		});
+	</script>
+</body>
+</html>

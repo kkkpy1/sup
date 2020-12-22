@@ -1,0 +1,4 @@
+-- 상품 추가
+INSERT INTO "SUP"."PRODUCT" (PRODUCT_ID, MEMBER_ID, PRODUCT_NAME, PRODUCT_IMG, PRODUCT_PRICE, PRODUCT_BRAND, PRODUCT_DETAIL, PRODUCT_CATEGORY, PRODUCT_QUANTITY, PRODUCT_ACTIVATED, PRODUCT_DATE) VALUES ('1', 'seller1', '테스트상품1', 'https://image.freepik.com/free-photo/front-view-collection-of-father-s-day-presents_23-2148548477.jpg', '10000', '나이다스', '테스트 상품입니다.', '화장품', '50', '1', TO_DATE('2020-12-20 22:46:13', 'YYYY-MM-DD HH24:MI:SS'))
+INSERT INTO "SUP"."PRODUCT" (PRODUCT_ID, MEMBER_ID, PRODUCT_NAME, PRODUCT_IMG, PRODUCT_PRICE, PRODUCT_BRAND, PRODUCT_DETAIL, PRODUCT_CATEGORY, PRODUCT_QUANTITY, PRODUCT_ACTIVATED, PRODUCT_DATE) VALUES ('2', 'seller1', '테스트상품2', 'https://image.freepik.com/free-photo/top-view-father-s-day-drawing-on-the-table_23-2148548447.jpg', '15000', '아이키', '아빠한테 드리는 선물', '장신구', '3', '1', TO_DATE('2020-12-20 22:48:20', 'YYYY-MM-DD HH24:MI:SS'))
+

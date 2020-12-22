@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="../static/css/gift_list.css">
+</head>
+<body>
+	<div class="container">
+		<h2  style="font-weight: 700;">받은 선물함</h2>
+		<div class="container" id="tourpackages-carousel">
+			<div class="row">
+				<h3  style="font-weight: bold;">미사용</h3>
+				<div class="col-xs-18 col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="http://placehold.it/500x300" alt="">
+						<div class="caption">
+							<input type="text" class="form-control" id="" placeholder="선물이름">
+							<input type="text" class="form-control" id="" placeholder="유효기간">
+							<br />
+							<p>
+								<a href="use" class="btn btn-info btn-xs" role="button">사용하기</a> <a
+									href="#" class="btn btn-default btn-xs" role="button" id="refuse">거절하기</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-18 col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="http://placehold.it/500x300" alt="">
+						<div class="caption">
+							<input type="text" class="form-control" id="" placeholder="선물이름">
+							<input type="text" class="form-control" id="" placeholder="유효기간">
+							<br />
+							<p>
+								<a href="#" class="btn btn-info btn-xs" role="button">사용하기</a> <a
+									href="#" class="btn btn-default btn-xs" role="button">거절하기</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-18 col-sm-6 col-md-3">
+					<div class="thumbnail">
+						<img src="http://placehold.it/500x300" alt="">
+						<div class="caption">
+							<input type="text" class="form-control" id="" placeholder="선물이름">
+							<input type="text" class="form-control" id="" placeholder="유효기간">
+							<br />
+							<p>
+								<a href="#" class="btn btn-info btn-xs" role="button">사용하기</a> <a
+									href="#" class="btn btn-default btn-xs" role="button">거절하기</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- End row -->
+			</div>
+			<!-- End container -->
+			<hr />
+			<div class="container" id="tourpackages-carousel">
+				<div class="row">
+					<h3 style="font-weight: bold;">사용완료</h3>
+
+					<div class="col-xs-18 col-sm-6 col-md-3">
+						<div class="thumbnail">
+							<img src="http://placehold.it/500x300" alt="">
+							<div class="caption">
+								<input type="text" class="form-control" id="" placeholder="선물이름">
+								<br />
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-18 col-sm-6 col-md-3">
+						<div class="thumbnail">
+							<img src="http://placehold.it/500x300" alt="">
+							<div class="caption">
+								<input type="text" class="form-control" id="" placeholder="선물이름">
+								<br />
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-18 col-sm-6 col-md-3">
+						<div class="thumbnail">
+							<img src="http://placehold.it/500x300" alt="">
+							<div class="caption">
+								<input type="text" class="form-control" id="" placeholder="선물이름">
+								<br />
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End row -->
+			</div>
+			<!-- End container -->
+			<script>
+			$('#refuse').on('click', function() {
+				if (confirm("선물을 거절하시겠습니까 ? \n거절 후 되돌릴 수 없습니다.")) {
+					alert("거절되었습니다.");
+					location.href = "list";
+				} else {
+					history.go(0);
+				}
+			});
+			</script>
+</body>
+</html>

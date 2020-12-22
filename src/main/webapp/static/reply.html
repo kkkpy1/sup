@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>답장</title>
+<style>
+	body{padding-top:20px;}
+</style>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+		<div class="col-sm-4 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">                
+                    <form accept-charset="UTF-8" action="" method="POST">
+                        <textarea class="form-control counted" name="message" placeholder="Type in your message" rows="5" style="margin-bottom:10px;"></textarea>
+                        	<div class="text-right"></div>
+                        	<button type="button" class="btn btn-default" id="cancel">취소</button>
+                        	<button type="button" class="btn btn-info" id="submit">전송</button>
+                        	</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+<script>
+    $('#cancel').on('click', function() {
+			if (confirm("취소하시겠습니까 ? ")) {
+				alert("취소되었습니다.");
+				location.href = "admin_main";
+			} else {
+				history.go(0);
+			}
+		});
+		$('#submit').on('click', function() {
+				alert("전송되었습니다.");
+				location.href = "admin_main";
+		});
+</script>
+</body>
+</html>

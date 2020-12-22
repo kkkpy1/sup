@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>일반계정 관리</title>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div class="col-md-10 content">
+		<div class="panel panel-default">
+			<div class="panel-heading">일반 계정 관리</div>
+			<div class="panel-body">
+				<div class="row p-5">
+					<div class="col-md-12">
+						<table class="table">
+							<thead>
+								<tr>
+									<th class="border-0 text-uppercase small font-weight-bold">NO</th>
+									<th class="border-0 text-uppercase small font-weight-bold">이름</th>
+									<th class="border-0 text-uppercase small font-weight-bold">ID</th>
+									<th class="border-0 text-uppercase small font-weight-bold">연락처</th>
+									<th class="border-0 text-uppercase small font-weight-bold">이메일</th>
+									<th class="border-0 text-uppercase small font-weight-bold">활성화
+										/ 비활성화</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td class="name">김**</td>
+									<td>aaa123</td>
+									<td>010-1234-5678</td>
+									<td>bbb@ccc.com</td>
+									<td>비활성화</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td class="name"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="name"></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script>
+		$('.name').on('click', function() {
+			location.href = "general_detail";
+		});
+	</script>
+</body>
+</html>

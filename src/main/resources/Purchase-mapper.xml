@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Purchase">
+	<parameterMap type="purchaseVO" id="insertParameterMap">
+		<parameter property="productId" javaType="Integer"
+			jdbcType="INTEGER" mode="IN" />
+		<parameter property="senderId" javaType="String"
+			jdbcType="VARCHAR" mode="IN" />
+		<parameter property="recepientId" javaType="String"
+			jdbcType="VARCHAR" mode="IN" />
+	</parameterMap>
+
+	<insert id="insertSP" parameterType="customerVO"
+		statementType="CALLABLE" parameterMap="insertParameterMap">
+		{ call sp_purchase_insert(?, ?, ?) }
+	</insert>
+	
+	<!-- select -->
+	<resultMap type="purchaseVO" id="selectMap">
+		<id property="purchaseId" javaType="Integer" 
+		column="purchase_id" jdbcType="INTEGER" />
+		
+		<result property="productId" javaType="Integer" 
+		column="product_id" jdbcType="INTEGER" />
+		
+		<result property="senderId" javaType="String"
+			column="sender_id" jdbcType="VARCHAR" />
+
+		<result property="recepientId" javaType="String"
+			column="recepient_id" jdbcType="VARCHAR" />
+
+		<result property="purchaseState" javaType="String"
+			column="purchase_state" jdbcType="CHAR" />
+
+		<result property="purchaseDate" javaType="String"
+			column="purchase_date" jdbcType="VARCHAR" />
+
+		<result property="productName" javaType="String"
+			column="product_name" jdbcType="VARCHAR" />
+
+		<result property="productPrice" javaType="Integer"
+			column="product_price" jdbcType="INTEGER" />
+	</resultMap>
+
+	<!-- select One -->
+	<parameterMap type="hashMap" id="selectAllSendParameterMap">
+		<parameter property="senderId" javaType="String" jdbcType="VARCHAR" mode="IN"/>
+		<parameter property="result" javaType="ResultSet" jdbcType="CURSOR" 
+		mode="OUT" resultMap="selectMap"/>
+	</parameterMap>
+	<select id="selectAllSendSP" parameterMap="selectAllSendParameterMap" statementType="CALLABLE">
+		{ call sp_purchase_select_send(?, ?) }	
+	</select>
+	
+	<parameterMap type="hashMap" id="selectAllReceiveParameterMap">
+		<parameter property="recepientId" javaType="String" jdbcType="VARCHAR" mode="IN"/>
+		<parameter property="result" javaType="ResultSet" jdbcType="CURSOR" 
+		mode="OUT" resultMap="selectMap"/>
+	</parameterMap>
+	<select id="selectAllReceiveSP" parameterMap="selectAllReceiveParameterMap" statementType="CALLABLE">
+		{ call sp_purchase_select_receive(?, ?) }	
+	</select>
+	
+	<!-- update -->
+	<parameterMap type="hashMap" id="updateStateToUsedParameterMap">
+		<parameter property="purchaseId" javaType="Integer" jdbcType="INTEGER" mode="IN"/>
+	</parameterMap>
+	<update id="updateStateToUsedSP" parameterMap="updateStateToUsedParameterMap" statementType="CALLABLE">
+		{ call sp_purchase_update_state_to_used(?) }  
+	</update>
+
+	<parameterMap type="hashMap" id="updateStateToRejectedParameterMap">
+		<parameter property="purchaseId" javaType="Integer" jdbcType="INTEGER" mode="IN"/>
+	</parameterMap>
+	<update id="updateStateToRejectedSP" parameterMap="updateStateToRejectedParameterMap" statementType="CALLABLE">
+		{ call sp_purchase_update_state_to_rejected(?) }  
+	</update>
+</mapper>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글 신고 요청 관리</title>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div class="col-md-10 content">
+		<div class="panel panel-default">
+			<div class="panel-heading">글 신고 요청 관리</div>
+			<div class="panel-body">
+				<div class="row p-5">
+					<div class="col-md-12">
+						<table class="table">
+							<thead>
+								<tr>
+									<th class="border-0 text-uppercase small font-weight-bold"></th>
+									<th class="border-0 text-uppercase small font-weight-bold">NO</th>
+									<th class="border-0 text-uppercase small font-weight-bold">제목</th>
+									<th class="border-0 text-uppercase small font-weight-bold">작성자</th>
+									<th class="border-0 text-uppercase small font-weight-bold">신고처리</th>
+									<th class="border-0 text-uppercase small font-weight-bold"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="checkbox">
+											<label> <input type="checkbox" id="blankCheckbox"
+												value="option1" aria-label="...">
+											</label>
+										</div>
+									</td>
+									<td>1</td>
+									<td class="detail">**글 신고합니다</td>
+									<td>김**</td>
+									<td>처리완료</td>
+									<td class="reply"><button type="button" class="btn btn-info">답장</button></td>
+								</tr>
+
+								<tr>
+									<td>
+										<div class="checkbox">
+											<label> <input type="checkbox" id="blankCheckbox"
+												value="option1" aria-label="...">
+											</label>
+										</div>
+									</td>
+									<td>2</td>
+									<td class="detail">**글 신고합니다</td>
+									<td>김**</td>
+									<td>처리 미완료</td>
+									<td class="reply"><button type="button" class="btn btn-info">답장</button></td>
+								</tr>
+
+								<tr>
+									<td>
+										<div class="checkbox">
+											<label> <input type="checkbox" id="blankCheckbox"
+												value="option1" aria-label="...">
+											</label>
+										</div>
+									</td>
+									<td>3</td>
+									<td class="detail">**글 신고합니다</td>
+									<td></td>
+									<td></td>
+									<td class="reply"><button type="button" class="btn btn-info" >답장</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div align="center">
+		<button class="btn btn-default" type="submit" id="delete">삭제</button>
+		&nbsp;&nbsp;
+		<button class="btn btn-default" type="submit" id="reject">거절</button>
+	</div>
+	</div>
+	<script>
+		$('#delete').on('click', function() {
+			if (confirm("삭제하시겠습니까 ? ")) {
+				alert("삭제되었습니다.");
+				location.href = "admin_main";
+			} else {
+				history.go(0);
+			}
+		});
+		$('#reject').on('click', function() {
+			if (confirm("거절하시겠습니까 ? ")) {
+				alert("거절되었습니다.");
+				location.href = "admin_main";
+			} else {
+				history.go(0);
+			}
+		});
+		$('.detail').on('click', function() {
+			location.href="report_detail";
+		});
+		$('.reply').on('click', function() {
+			location.href="reply";
+		});
+	</script>
+</body>
+</html>

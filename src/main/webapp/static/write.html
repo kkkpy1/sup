@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>글쓰기</title>
+<link rel="stylesheet" href="static/css/bootstrap.css " />
+
+</head>
+<body>
+	<div class="container">
+	<form>
+		<fieldset>
+			<table id="tbl" style="margin-left: auto; margin-right: auto;">
+				<tr>
+					<td><img src="http://placehold.it/150x120" id="image"
+						width=150 /> <input type="file" name="image" accept="image/*"
+						style="visibility: hidden;"></td>
+					<td><input type="text" name="" size=27></td>
+					<td><input type="button" value="상품추가" id="add""></td>
+				</tr>
+			</table>
+			<table style="margin-left: auto; margin-right: auto;">
+				<tr>
+					<td><textarea rows="15" cols="80" name="detail"></textarea></td>
+				</tr>
+			</table>
+			<br />
+			<div align="right">
+				<button type="button" class="btn btn-default">임시저장</button>
+				<button type="button" class="btn btn-info" id="upload">올리기</button>
+			</div>
+			
+		</fieldset>
+	</form>
+	<script>
+		$('#add').click(function() { //버튼을 클릭 했을시 popupOpen 함수 출력 
+			console.log('click');
+			popupOpen(); //Popup Open 함수
+		});
+
+		function popupOpen() {
+			var url = "addproduct"; //팝업창 페이지 URL
+			var winWidth = 700;
+			var winHeight = 600;
+			var popupOption = "width=" + winWidth + ", height=" + winHeight; //팝업창 옵션(optoin)
+			window.open(url, "", popupOption);
+		}
+		
+		$('#upload').on('click', function() {
+			if (confirm("등록하시겠습니까 ? ")) {
+				alert("등록되었습니다.");
+				location.href = "post";
+			} else {
+				history.go(0);
+			}
+		});
+	</script>
+</body>
+</html>
