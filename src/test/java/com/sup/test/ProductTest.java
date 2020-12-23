@@ -53,10 +53,10 @@ class ProductTest {
 		}
 	}
 	
-	@Test
+	@Disabled @Test
 	void selectOne() { // 상품 1개 가져오기
 		int productId = 2;
-		List<ProductVO> list = this.productService.selectOneProduct(productId);
+		List<ProductVO> list = this.productService.selectProductById(productId);
 		if(list.isEmpty()) System.out.println("상품이 없습니다.");
 		else {
 			System.out.println("상품목록은 아래와 같습니다.");
@@ -68,5 +68,19 @@ class ProductTest {
 
 	}
 	
+	@Disabled @Test
+	void selectByName() { // 이름으로 상품목록 가져오기. LIKE문 이용해서 포함돼있으면 다가져온다
+		String productName = "테스트";
+		List<ProductVO> list = this.productService.selectProductByName(productName);
+		if(list.isEmpty()) System.out.println("상품이 없습니다.");
+		else {
+			System.out.println("상품목록은 아래와 같습니다.");
+			for (int i = 0; i < list.size(); i++) {
+				ProductVO productVO = list.get(i);
+				log.info(productVO.getProductName());
+			}
+		}
+
+	}
 
 }

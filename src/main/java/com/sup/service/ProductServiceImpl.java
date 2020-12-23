@@ -19,8 +19,13 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> selectOneProduct(int productId) {
-		return this.productDao.selectOneProduct(productId);
+	public List<ProductVO> selectProductById(int productId) {
+		return this.productDao.selectProductById(productId);
+	}
+
+	@Override
+	public List<ProductVO> selectProductByName(String productName) {
+		return this.productDao.selectProductByName(productName);
 	}
 
 }

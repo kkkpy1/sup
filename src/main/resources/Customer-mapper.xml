@@ -137,6 +137,7 @@
 		<result property="memberDate" javaType="String"
 			column="member_date" jdbcType="VARCHAR" />
 	</resultMap>	
+	
 	<parameterMap type="hashMap" id="selectUserByNameParameterMap">
 		<parameter property="memberName" javaType="String" jdbcType="VARCHAR" mode="IN"/>
 		<parameter property="result" javaType="ResultSet" jdbcType="CURSOR" 
@@ -167,6 +168,15 @@
 
 	<select id="selectFriendsSP" statementType="CALLABLE" parameterMap="selectFriendsParameterMap">
 		{ call sp_customer_select_friends(?, ?)}
+	</select>
+
+	<parameterMap type="hashMap" id="selectUserByIdParameterMap">
+		<parameter property="memberId" javaType="String" jdbcType="VARCHAR" mode="IN"/>
+		<parameter property="result" javaType="ResultSet" jdbcType="CURSOR" 
+		mode="OUT" resultMap="selectMap"/>
+	</parameterMap>
+	<select id="selectUserByIdSP" parameterMap="selectUserByIdParameterMap" statementType="CALLABLE">
+		{ call sp_customer_select_user_by_id(?, ?) }	
 	</select>
 
 </mapper>

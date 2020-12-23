@@ -2,9 +2,107 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Seller Main</title>
+<link rel="stylesheet" href="static/css/bootstrap.css">
+<script src="static/js/jquery-3.5.1.js"></script>
+<script src="static/js/bootstrap.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$(".btnChart").click(function() {
+			location.href = "chart";
+		});
+	});
+    $(document).ready(function() {
+		$(".btnChart1").click(function() {
+			location.href = "chart";
+		});
+	});
+	
+</script>
 </head>
 <body>
-<h1>판매자 메인</h1>
-</body>
-</html>
+    <div class="container">
+         <div class="row">
+             <h1 class="text-center">매출내역</h1> 
+             
+             <table class="table">
+                 <tr>
+                     <td class="text-left">[<a href="chart">차트로 보기</a>]</td>
+                     <td class="text-right">(${productlist.size()})</td>
+                 </tr>
+             </table>
+             <table class="table table-bordered">
+                   <thead>
+                       <tr class="success">
+                           <th class="text-center" style="width:10%">상품 ID</th>
+                           <th class="text-center" style="width:25%">상품명</th>
+                           <th class="text-center" style="width:10%">판매가</th>
+                           <th class="text-center" style="width:10%">판매수량</th>
+                         <th class="text-center" style="width:10%">환불수량</th>
+                         <th class="text-center" style="width:10%">판매액</th>
+                           <th class="text-center" style="width:10%">환불액</th>
+                           <th class="text-center" style="width:25%">총 수입량</th>
+                       </tr>
+                   </thead>
+                      <tbody>
+                   <c:if test="${productlist.size() == 0}">
+                       <tr>
+                           <td colspan="6" class="text-center danger">No Data</td>
+                       </tr>
+                   </c:if>
+                   <c:if test="${productlist.size() > 0}">
+                       <c:forEach items="${productlist}" var="product">
+                           <tr>
+                               <td class="text-center">${product.product_id}</td>
+                               <!--아마 아래처럼 추후수정 -->  							
+                               <td class="text-center">${product.product_name}</td>
+                               <td class="text-center">${product.product_price}</td>
+                               <td class="text-center">
+                                   <a href="/bbs/read?bno=${product.bno}">${product.title}</a>
+                               </td>
+                               
+                               <!--아래 판매수량 환불수량 판매액 환불액은 계산과 데이터 가져올 위치랑 이름 erd에 안보임 -추후수정 -->
+                               <!-- 계산이라 데이터 이렇게 가져오게함 아니면 위에처럼 변경하기 -->
+                               <td class="text-center">
+                                   <a href="/판매수량있는곳/read?bno=${ranking_purchase_count}">${ranking_purchase_count}</a>
+                               </td>
+                               <td class="text-center">
+                                   <a href="/환불수량있는곳/read?bno=${ranking_purchase_count}">${ranking_purchase_count}</a>
+                               </td>
+                               <td class="text-center">
+                                   <a href="/판매액/read?bno=${ranking_purchase_count}">${ranking_purchase_count}</a>
+                               </td>
+                               <td class="text-center">
+                                   <a href="/환불액/read?bno=${ranking_purchase_count}">${ranking_purchase_count}</a>
+                               </td>
+                               <td class="text-center">
+                                   <a href="/총수입량/read?bno=${ranking_purchase_count}">${ranking_purchase_count}</a>
+                               </td>
+                               <td class="text-center">${product.writeday}</td>
+                               <td class="text-center">${product.readnum}</td>
+                               
+                               <!--
+                               <td class="text-center">
+                                   <a href="/bbs/read?bno=${bbs.bno}">${bbs.title}</a>
+                               </td>-->
+                               <!--  <td class="text-center">
+                                   <c:if test="${empty product.환불액}">
+                                       ${"0"}
+                                   </c:if>
+                                   <c:if test="${not empty product.email}">
+                                       <a href=":${product.ㅎ}">${product.writer}</a>
+                                   </c:if>
+                               </td>
+                               -->
+                           </tr>
+                       </c:forEach>
+                   </c:if>
+               </tbody>
+             </table>
+             <button id="btnChart1" type="button" class="btn btn-warning">차트로 보기
+             </button>
+         </div>
+     </div>
+ </body>
+ </html>

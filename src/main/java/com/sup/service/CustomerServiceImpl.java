@@ -58,4 +58,9 @@ public class CustomerServiceImpl implements CustomerService {
 		return this.customerDao.selectFriends(memberId);
 	}
 
+	@Override
+	public List<CustomerVO> getCustomerInfo(String memberId) {
+		return this.customerDao.selectUserById(memberId);
+	}
+
 }

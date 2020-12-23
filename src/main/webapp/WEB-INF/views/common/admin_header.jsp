@@ -42,3 +42,13 @@
 			<li><a href="seller_account">판매자 계정 관리</a></li>
 		</ul>
 	</div>
+	<script>
+		$('#logout').on('click', function() {
+			if (confirm("로그아웃 하시겠습니까 ? ")) {
+				alert("로그아웃 되었습니다.");
+				location.href = "index";
+			} else {
+				history.go(0);
+			}
+		});
+	</script>

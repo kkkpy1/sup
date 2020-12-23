@@ -2,5 +2,5 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:import url="/static/seller_main.html" charEncoding="utf-8"/>
+<c:import url="/static/chart.html" charEncoding="utf-8"/>
 <c:import url="../common/footer.jsp" />

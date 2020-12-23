@@ -1,5 +1,31 @@
 package com.sup.vo;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+
 public class PostVO {
-	// 좋아요 수는 필요없는게, 상품에서 좋아요 수를 보여주진 않을거야
+	// Product Info
+	private int productId;
+	private String productName;
+	private String productImg;
+	private int productPrice;
+	private String productBrand;
+	private String productCategory;
+	
+	// Post Info
+	private int postId;
+	private String memberId;
+	private String postContent;
+	private String postSharedRange;
+	private int postLikeCount;
+	private String postDate;
 }

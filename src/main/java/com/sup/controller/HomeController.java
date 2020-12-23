@@ -202,10 +202,30 @@ public class HomeController {
 	public String report_detail() {
 		return "/admin/report_detail";
 	}
-	
+
 	@RequestMapping(value = "/reply", method = RequestMethod.GET)
 	public String reply() {
 		return "/admin/reply";
+	}
+
+	@RequestMapping(value = "/chart", method = RequestMethod.GET)
+	public String chart() {
+		return "/seller/chart";
+	}
+
+	@RequestMapping(value = "/admin_notice", method = RequestMethod.GET)
+	public String admin_notice() {
+		return "/mypage/admin_notice";
+	}
+
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	public String update() {
+		return "/mypage/update";
+	}
+	
+	@RequestMapping(value = "/add_friend", method = RequestMethod.GET)
+	public String add_friend() {
+		return "/mypage/add_friend";
 	}
 
 }

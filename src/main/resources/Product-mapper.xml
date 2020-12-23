@@ -57,5 +57,13 @@
 		{ call sp_product_select(?, ?) }	
 	</select>
 	
+	<parameterMap type="hashMap" id="selectProductByNameParameterMap">
+		<parameter property="productName" javaType="String" jdbcType="VARCHAR" mode="IN"/>
+		<parameter property="result" javaType="ResultSet" jdbcType="CURSOR" 
+		mode="OUT" resultMap="selectMap"/>
+	</parameterMap>
+	<select id="selectProductByNameSP" parameterMap="selectProductByNameParameterMap" statementType="CALLABLE">
+		{ call sp_product_select_by_name(?, ?) }	
+	</select>
 
 </mapper>

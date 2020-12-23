@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Post">
+	<!-- insert -->
+	<parameterMap type="postVO" id="insertParameterMap">
+		<parameter property="productId" javaType="Integer"
+			jdbcType="INTEGER" mode="IN" />
+		<parameter property="memberId" javaType="String"
+			jdbcType="VARCHAR" mode="IN" />
+		<parameter property="postContent" javaType="String"
+			jdbcType="VARCHAR" mode="IN" />
+	</parameterMap>
+
+	<insert id="insertSP" parameterType="postVO"
+		statementType="CALLABLE" parameterMap="insertParameterMap">
+		{ call sp_post_insert(?, ?, ?) }
+	</insert>
+	
+	<!-- select -->
+	
+	<resultMap type="postVO" id="selectMap">
+		<result property="productId" javaType="Integer" 
+		column="product_id" jdbcType="INTEGER" />
+		
+		<result property="productName" javaType="String"
+			column="product_name" jdbcType="VARCHAR" />
+
+		<result property="productImg" javaType="String"
+			column="product_img" jdbcType="VARCHAR" />
+
+		<result property="productPrice" javaType="Integer"
+			column="product_price" jdbcType="INTEGER" />
+
+		<result property="productBrand" javaType="String"
+			column="product_brand" jdbcType="VARCHAR" />
+
+		<result property="productCategory" javaType="String"
+			column="product_category" jdbcType="VARCHAR" />
+
+		<result property="postId" javaType="Integer" 
+		column="post_id" jdbcType="INTEGER" />
+
+		<result property="memberId" javaType="String"
+			column="member_id" jdbcType="VARCHAR" />
+			
+		<result property="postContent" javaType="String"
+			column="post_content" jdbcType="VARCHAR" />
+			
+		<result property="postSharedRange" javaType="String"
+			column="post_shared_range" jdbcType="VARCHAR" />
+
+		<result property="postLikeCount" javaType="Integer"
+			column="post_like_count" jdbcType="INTEGER" />
+			
+		<result property="postDate" javaType="String"
+			column="post_date" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<parameterMap type="hashMap" id="selectMyPostParameterMap">
+		<parameter property="memberId" javaType="String" jdbcType="VARCHAR" mode="IN"/>
+		<parameter property="result" javaType="ResultSet" jdbcType="CURSOR" 
+		mode="OUT" resultMap="selectMap"/>
+	</parameterMap>
+	<select id="selectMyPostSP" parameterMap="selectMyPostParameterMap" statementType="CALLABLE">
+		{ call sp_post_select_my_post(?, ?) }	
+	</select>
+
+	<parameterMap type="hashMap" id="selectOneParameterMap">
+		<parameter property="postId" javaType="Integer" jdbcType="INTEGER" mode="IN"/>
+		<parameter property="result" javaType="ResultSet" jdbcType="CURSOR" 
+		mode="OUT" resultMap="selectMap"/>
+	</parameterMap>
+	<select id="selectOneSP" parameterMap="selectOneParameterMap" statementType="CALLABLE">
+		{ call sp_post_select(?, ?) }	
+	</select>
+	
+	<!-- update & delete -->
+	<parameterMap type="postVO" id="updateParameterMap">
+		<parameter property="postId" javaType="Integer"
+			jdbcType="INTEGER" mode="IN" />
+		<parameter property="productId" javaType="Integer"
+			jdbcType="INTEGER" mode="IN" />
+		<parameter property="memberId" javaType="String"
+			jdbcType="VARCHAR" mode="IN" />
+		<parameter property="postContent" javaType="String"
+			jdbcType="VARCHAR" mode="IN" />
+	</parameterMap>
+	<update id="updateSP" parameterMap="updateParameterMap" statementType="CALLABLE">
+		{ call sp_post_update(?, ?, ?, ?) }  
+	</update>
+
+	<delete id="delete" parameterType="int">
+		DELETE FROM POST
+		WHERE POST_ID = #{postId}
+	</delete>
+
+</mapper>

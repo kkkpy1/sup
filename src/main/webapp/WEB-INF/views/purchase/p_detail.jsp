@@ -96,6 +96,9 @@
 										<button class="btn btn-sm btn-default" id="purchase1">
 											<i class="fa fa-fw fa-eye"></i> 선물하기
 										</button>
+										<button class="btn btn-sm btn-default" id="wishlist">
+											<i class="fa fa-fw fa-eye"></i> 위시리스트
+										</button>
 									</div>
 								</div>
 							</div>
@@ -192,6 +195,10 @@
 							console.log('click');
 							popupOpen(); //Popup Open 함수
 						});
+						$('#wishlist').on('click', function(){
+								alert("위시리스트에 추가되었습니다.");
+								location.href="mywishlist";
+							});
 
 						function popupOpen() {
 							var url = "pay"; //팝업창 페이지 URL

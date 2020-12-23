@@ -7,6 +7,7 @@ import com.sup.vo.ProductVO;
 public interface ProductDao {
 	List<ProductVO> selectAllProduct();
 
-	List<ProductVO> selectOneProduct(int productId);
+	List<ProductVO> selectProductById(int productId);
 
+	List<ProductVO> selectProductByName(String productName);
 }

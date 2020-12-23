@@ -14,4 +14,5 @@ public interface CustomerService {
 	List<CustomerVO> findUserByName(String memberName);
 	void addFriend(String memberId, String friendId);
 	List<CustomerVO> getFriendsList(String memberId);
+	List<CustomerVO> getCustomerInfo(String memberId);
 }

@@ -15,4 +15,5 @@ public interface CustomerDao {
 	List<CustomerVO> selectUserByName(String memberName);
 	void insertFriends(String memberId, String friendId);
 	List<CustomerVO> selectFriends(String memberId);
+	List<CustomerVO> selectUserById(String memberId);
 }

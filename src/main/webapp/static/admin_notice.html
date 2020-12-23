@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>관리자 알림</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+    body { font-family:'맑은 고딕', verdana; padding:0; margin:0; }
+     ul { padding:0; margin:0; list-style:none;  }
+    
+     div#root { width:90%; margin:0 auto; }
+     
+     header#header { font-size:60px; padding:20px 0; }
+     header#header h1 a { color:#000; font-weight:bold; }
+     
+     nav#nav { padding:10px; text-align:right; }
+     nav#nav ul li { display:inline-block; margin-left:10px; }
+    
+       section#container { padding:20px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; }
+     section#container::after { content:""; display:block; clear:both; }
+     aside { float:left; width:200px; }
+     div#container_box { float:right; width:calc(100% - 200px - 20px); }
+     
+     aside ul li { text-align:center; margin-bottom:10px; }
+     aside ul li a { display:block; width:100%; padding:10px 0;}
+     aside ul li a:hover { background:#eee; }
+     
+     footer#footer { background:#f9f9f9; padding:20px; }
+     footer#footer ul li { display:inline-block; margin-right:10px; }
+     
+    </style>
+</head>
+<body>
+    <section id="container">
+		<aside>
+			<ul>
+				<li><a href="admin_notice">관리자알림</a></li>
+				<li><a href="update">내정보 수정하기</a></li>
+				<li><a href="post">내 글 목록</a></li>
+				<li><a href="friends">친구 목록</a></li>
+			</ul>
+        </aside>
+        <div class="container">
+			<div class="col-md-10 content">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        관리자 알림
+                    </div>
+                    <div class="panel-body">
+                      <div class="row p-5">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-0 text-uppercase small font-weight-bold">NO</th>
+                                            <th class="border-0 text-uppercase small font-weight-bold">Name</th>
+                                            <th class="border-0 text-uppercase small font-weight-bold">value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    </body>
+</html>

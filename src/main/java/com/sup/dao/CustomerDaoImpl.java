@@ -100,4 +100,13 @@ public class CustomerDaoImpl implements CustomerDao {
 		return (List<CustomerVO>)map.get("result");
 	}
 
+
+	@Override
+	public List<CustomerVO> selectUserById(String memberId) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("memberId", memberId);       //INPUT Parameter
+		this.sqlSession.selectList("Customer.selectUserByIdSP", map);
+		return (List<CustomerVO>)map.get("result");
+	}
+
 }
