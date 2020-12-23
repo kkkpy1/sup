@@ -21,6 +21,12 @@
 		<div class="row">
 			<div class="col-md-8">
 				<h2 class="page-header">Feed</h2>
+				<c:if test="${empty userid}">
+					<h1>no session</h1>
+				</c:if>
+				<c:if test="${not empty userid}">
+					<h1>${userid}</h1>
+				</c:if>
 				<section class="comment-list">
 					<!-- First Comment -->
 					<article class="row">
@@ -50,8 +56,8 @@
 											consequat.</p>
 									</div>
 									<p class="text-right">
-										<a href="/report" class="btn btn-danger"><i class="fa fa-reply"></i>
-											신고하기</a>
+										<a href="/report" class="btn btn-danger"><i
+											class="fa fa-reply"></i> 신고하기</a>
 									</p>
 									<p class="text-right">
 										<a href="#" class="btn btn-primary"><i class="fa fa-reply"></i>
@@ -89,8 +95,8 @@
 											consequat.</p>
 									</div>
 									<p class="text-right">
-										<a href="/report" class="btn btn-danger"><i class="fa fa-reply"></i>
-											신고하기</a>
+										<a href="/report" class="btn btn-danger"><i
+											class="fa fa-reply"></i> 신고하기</a>
 									</p>
 									<p class="text-right">
 										<a href="#" class="btn btn-primary"><i class="fa fa-reply"></i>
@@ -121,8 +127,8 @@
 											consequat.</p>
 									</div>
 									<p class="text-right">
-										<a href="/report" class="btn btn-danger"><i class="fa fa-reply"></i>
-											신고하기</a>
+										<a href="/report" class="btn btn-danger"><i
+											class="fa fa-reply"></i> 신고하기</a>
 									</p>
 									<p class="text-right">
 										<a href="#" class="btn btn-primary"><i class="fa fa-reply"></i>
@@ -167,8 +173,8 @@
 											consequat.</p>
 									</div>
 									<p class="text-right">
-										<a href="/report" class="btn btn-danger"><i class="fa fa-reply"></i>
-											신고하기</a>
+										<a href="/report" class="btn btn-danger"><i
+											class="fa fa-reply"></i> 신고하기</a>
 									</p>
 									<p class="text-right">
 										<a href="#" class="btn btn-primary"><i class="fa fa-reply"></i>
@@ -199,8 +205,8 @@
 											consequat.</p>
 									</div>
 									<p class="text-right">
-										<a href="/report" class="btn btn-danger"><i class="fa fa-reply"></i>
-											신고하기</a>
+										<a href="/report" class="btn btn-danger"><i
+											class="fa fa-reply"></i> 신고하기</a>
 									</p>
 									<p class="text-right">
 										<a href="#" class="btn btn-primary"><i class="fa fa-reply"></i>

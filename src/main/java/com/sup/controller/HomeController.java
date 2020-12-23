@@ -13,13 +13,6 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
-		logger.info("영진 테스트 완료");
-		logger.info("준환 테스트 완료");
-		logger.info("선아 테스트 완료");
-		logger.info("--여기까지 확인 by 영진--");
-		logger.info("남기 테스트 완료");
-		logger.info("소희 테스트 완료");
-
 		return "index"; // WEB-INF/views/index.jsp
 	}
 
@@ -78,11 +71,6 @@ public class HomeController {
 		return "/wishlist/main";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login() {
-		return "/account/login";
-	}
-
 	@RequestMapping(value = "/login2", method = RequestMethod.GET)
 	public String login2() {
 		return "/account/login2";
@@ -91,11 +79,6 @@ public class HomeController {
 	@RequestMapping(value = "/login3", method = RequestMethod.GET)
 	public String login3() {
 		return "/account/login3";
-	}
-
-	@RequestMapping(value = "/register1", method = RequestMethod.GET)
-	public String register1() {
-		return "/account/register1";
 	}
 
 	@RequestMapping(value = "/register2", method = RequestMethod.GET)
@@ -146,11 +129,6 @@ public class HomeController {
 	@RequestMapping(value = "/use", method = RequestMethod.GET)
 	public String use() {
 		return "/gift/use";
-	}
-
-	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
-	public String find_id() {
-		return "/account/find_id";
 	}
 
 	@RequestMapping(value = "/find_pw", method = RequestMethod.GET)

@@ -66,13 +66,12 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 		<ul class="nav navbar-nav">
-			<%-- <c:if test="${empty user.userid}">
-				<li><a href="login">로그인</a></li>
+			<c:if test="${empty userid}">
+				<li><a href="account/login">로그인</a></li>
 			</c:if>
-			<c:if test="${not empty user.userid}">
-				login 했다면
-				<c:if test="${user.flag eq 1}"> --%>
-			<li><a href="login">로그인</a></li>
+			<c:if test="${not empty userid}">
+				<li><a href="account/logout">로그아웃</a></li>			
+			</c:if>
 			<li><a href="gift">선물함</a></li>
 			<%-- </c:if>
 			</c:if> --%>

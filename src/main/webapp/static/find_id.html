@@ -21,14 +21,14 @@
           <span class="input-group-addon">
             @
           </span>
-          <input class="form-control" placeholder="이름을 입력해주세요" name="name" type="name" required="" autofocus="">
+          <input class="form-control" placeholder="이름을 입력해주세요" name="memberName" type="name" required="" autofocus="">
         </div>
         <div class="form-group input-group">
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-lock">
             </i>
           </span>
-          <input class="form-control" placeholder="전화번호를 입력해주세요" name="tel" type="tel" value="" required="">
+          <input class="form-control" placeholder="이메일을 입력해주세요" name="memberEmail" type="email" value="" required="">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary btn-block" id="find">
@@ -71,7 +71,23 @@
 	</div>
 </div>
 <script>
-$('#find').on('click', function() {
-	location.href="login";
-});
+	$(document).ready(function() {
+		$('#find').on('click', function() {
+			$.ajax({
+				url : "/account/find_id/" + $(this).val(), //     /find_id/
+				type : "POST",
+				dataType : "json",
+				success : function(data) {
+					if (data.result) { //사용할 수 있는 계정이라면
+						alert("아이디 : 테스트"); /*이 부분 현재 안먹는 상태임*/
+/* 						$('#btnSubmit').prop("disabled", false); //버튼 활성화 */
+					} else { //사용할 수 없는 계정이라면
+/* 	    				$('#btnSubmit').prop( "disabled", true);  //버튼 비활성화 */
+						alert("찾으시는 정보의 아이디는 없습니다.");
+					}
+				}
+			});
+		});
+
+	});
 </script>
